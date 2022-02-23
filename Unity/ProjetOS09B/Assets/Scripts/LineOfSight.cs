@@ -7,11 +7,13 @@ public class LineOfSight : MonoBehaviour
     public GameObject player;
     private RaycastHit hit;
     private Vector3 rayDirection;
+    private PlayerMovement playerMovement;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        playerMovement = player.GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -22,10 +24,10 @@ public class LineOfSight : MonoBehaviour
                 if (hit.transform == player.transform && Vector3.Angle(rayDirection, transform.forward) < 60) {
                     print("Player seen");
                 }
-                if (hit.transform == player.transform && player.isCrouching == true && rayDirection.magnitude < 1.0f) {
+                else if (playerMovement.isMoving && playerMovement.isCrouching && rayDirection.magnitude < 1.0f) {
                     print("Player crouched heard");
                 }
-                if (hit.transform == player.transform && rayDirection.magnitude < 4.0f) {
+                else if (playerMovement.isMoving && rayDirection.magnitude < 3.0f) {
                     print("Player heard");
                 }
     }
