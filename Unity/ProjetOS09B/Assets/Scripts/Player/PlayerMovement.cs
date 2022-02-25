@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 verticalVelocity = Vector3.zero;
     [SerializeField] LayerMask groundMask;
     bool isGrounded;
+    public bool isMoving;
 
     private void Update ()
     {
@@ -22,6 +23,10 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 horizontalVelocity = (transform.right * horizontalInput.x + transform.forward * horizontalInput.y) * speed;
         controller.Move(horizontalVelocity * Time.deltaTime);
+        if (horizontalVelocity != Vector3.zero)
+            isMoving = true;
+        else
+            isMoving = false;
 
         verticalVelocity.y += gravity * Time.deltaTime;
         controller.Move(verticalVelocity * Time.deltaTime);

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerInput : MonoBehaviour
 {
     [SerializeField] PlayerMovement movement;
     [SerializeField] MouseMovement mouse;
@@ -21,19 +21,15 @@ public class PlayerController : MonoBehaviour
         groundMovement = controls.Player;
 
         // groundMovement.[action].performed += context => do something
-        groundMovement.HorizontalMovement.performed += ctx => horizontalInput = ctx.ReadValue<Vector2>();
-
-        groundMovement.Jump.performed += _ => movement.OnJumpPressed();
-
-        groundMovement.MouseX.performed += ctx => mouseInput.x = ctx.ReadValue<float>();
-        groundMovement.MouseY.performed += ctx => mouseInput.y = ctx.ReadValue<float>();
+        groundMovement.Move.performed += ctx => horizontalInput = ctx.ReadValue<Vector2>();
+        groundMovement.Look.performed += ctx => mouseInput = ctx.ReadValue<Vector2>();
 
     }
 
     private void Update ()
     {
         movement.ReceiveInput(horizontalInput);
-        mouseLook.ReceiveInput(mouseInput);
+        mouse.ReceiveInput(mouseInput);
     }
 
     private void OnEnable ()
