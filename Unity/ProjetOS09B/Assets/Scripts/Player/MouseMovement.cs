@@ -5,13 +5,16 @@ using UnityEngine;
 public class MouseMovement : MonoBehaviour
 {
 
-    [SerializeField] float sensitivityX = 8f;
-    [SerializeField] float sensitivityY = 0.5f;
-    float mouseX, mouseY;
+    [SerializeField] private float sensitivityX = 8f;
+    [SerializeField] private float sensitivityY = 0.5f;
+    public float mouseX, mouseY;
 
-    [SerializeField] Transform playerCamera;
-    [SerializeField] float xClamp = 85f;
-    float xRotation = 0f;
+    [SerializeField] private Transform playerCamera;
+    [SerializeField] private float xClamp = 85f;
+    private float xRotation = 0f;
+    
+    private RaycastHit hit;
+    private bool interact;
 
     private void Start ()
     {
@@ -28,12 +31,27 @@ public class MouseMovement : MonoBehaviour
         Vector3 targetRotation = transform.eulerAngles;
         targetRotation.x = xRotation;
         playerCamera.eulerAngles = targetRotation;
+
+        // if (Physics.Raycast(transform.position, transform.forward, out hit, 3.0f))
+        // {
+        //     if (hit.transform.tag == "Interactable") {
+        //         print("Interactable");
+        //         if (interact == true) 
+        //             print("Interacted with");
+        //     }
+        // }
+
     }
 
     public void ReceiveInput (Vector2 mouseInput)
     {
         mouseX = mouseInput.x * sensitivityX;
         mouseY = mouseInput.y * sensitivityY;
+    }
+
+    public void Interact (bool interacting)
+    {
+        interact = interacting;
     }
     
     // private float mouseX;
