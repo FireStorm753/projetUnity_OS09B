@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MouseMovement : MonoBehaviour
 {
 
+    private Vector2 mouseMovement;
+    private float mouseX, mouseY;
     [SerializeField] private float sensitivityX = 8f;
     [SerializeField] private float sensitivityY = 0.5f;
-    public float mouseX, mouseY;
 
     [SerializeField] private Transform playerCamera;
     [SerializeField] private float xClamp = 85f;
@@ -32,15 +34,6 @@ public class MouseMovement : MonoBehaviour
         targetRotation.x = xRotation;
         playerCamera.eulerAngles = targetRotation;
 
-        // if (Physics.Raycast(transform.position, transform.forward, out hit, 3.0f))
-        // {
-        //     if (hit.transform.tag == "Interactable") {
-        //         print("Interactable");
-        //         if (interact == true) 
-        //             print("Interacted with");
-        //     }
-        // }
-
     }
 
     public void ReceiveInput (Vector2 mouseInput)
@@ -49,29 +42,29 @@ public class MouseMovement : MonoBehaviour
         mouseY = mouseInput.y * sensitivityY;
     }
 
-    public void Interact (bool interacting)
+    // public void OnLook (InputAction.CallbackContext context)
+    // {
+    //     if (context.performed)
+    //     {
+    //         mouseMovement = context.ReadValue<Vector2>();
+    //         mouseX = mouseMovement.x * sensitivityX;
+    //         mouseY = mouseMovement.y * sensitivityY;
+    //     }
+    // }
+
+    public void OnInteract (InputAction.CallbackContext context)
     {
-        interact = interacting;
+        if (context.performed)
+        {
+            if (Physics.Raycast(transform.position, transform.forward, out hit, 3.0f))
+            {
+                if (hit.transform.tag == "Interactable") {
+                    print("Interacted with");   
+                    
+                    hit.transform.gameObject.SendMessage("ChangeState");
+                    //hit.transform.GetComponent<Doors>().ChangeState();    
+                }
+            }
+        }
     }
-    
-    // private float mouseX;
-    // private float mouseY;
-    // private float mouseSensitivity = 100.0f;
-
-    // public Transform player;
-
-    // // Start is called before the first frame update
-    // void Start()
-    // {
-        
-    // }
-
-    // // Update is called once per frame
-    // void Update()
-    // {
-    //     mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-    //     mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-
-    //     player.Rotate(Vector3.up * mouseX);
-    // }
 }
