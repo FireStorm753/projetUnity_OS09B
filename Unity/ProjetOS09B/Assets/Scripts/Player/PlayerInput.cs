@@ -22,14 +22,8 @@ public class PlayerInput : MonoBehaviour
         controls = new PlayerControls();
         groundMovement = controls.Player;
 
-        // groundMovement.[action].performed += context => do something
         groundMovement.Move.performed += ctx => horizontalInput = ctx.ReadValue<Vector2>();
         groundMovement.Look.performed += ctx => mouseInput = ctx.ReadValue<Vector2>();
-        //groundMovement.Interact.started += ctx => interact = true;
-        groundMovement.Interact.performed += ctx => interact = true;
-        groundMovement.Interact.canceled += ctx => interact = false;
-        
-        // groundMovement.Interact.performed += ctx => mouseInput = ctx.ReadValue<Vector2>();
 
     }
 
@@ -39,14 +33,6 @@ public class PlayerInput : MonoBehaviour
         mouse.ReceiveInput(mouseInput);
         
         
-    }
-
-    public void OnInteract (InputAction.CallbackContext context)
-    {
-        if (context.started)
-            mouse.Interact(true);
-        else if (context.performed)
-            mouse.Interact(false);
     }
 
     private void OnEnable ()
