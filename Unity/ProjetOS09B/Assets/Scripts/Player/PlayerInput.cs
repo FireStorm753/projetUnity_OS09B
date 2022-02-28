@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerInput : MonoBehaviour
 
     Vector2 horizontalInput;
     Vector2 mouseInput;
+    bool interact = false;
 
     Coroutine fireCoroutine;
 
@@ -23,6 +25,11 @@ public class PlayerInput : MonoBehaviour
         // groundMovement.[action].performed += context => do something
         groundMovement.Move.performed += ctx => horizontalInput = ctx.ReadValue<Vector2>();
         groundMovement.Look.performed += ctx => mouseInput = ctx.ReadValue<Vector2>();
+        //groundMovement.Interact.started += ctx => interact = true;
+        groundMovement.Interact.performed += ctx => interact = true;
+        groundMovement.Interact.canceled += ctx => interact = false;
+        
+        // groundMovement.Interact.performed += ctx => mouseInput = ctx.ReadValue<Vector2>();
 
     }
 
@@ -30,6 +37,16 @@ public class PlayerInput : MonoBehaviour
     {
         movement.ReceiveInput(horizontalInput);
         mouse.ReceiveInput(mouseInput);
+        
+        
+    }
+
+    public void OnInteract (InputAction.CallbackContext context)
+    {
+        if (context.started)
+            mouse.Interact(true);
+        else if (context.performed)
+            mouse.Interact(false);
     }
 
     private void OnEnable ()
