@@ -13,6 +13,7 @@ public class MouseMovement : MonoBehaviour
 
     [SerializeField] private Transform playerCamera;
     [SerializeField] private float xClamp = 85f;
+    private float camHeightOffset = 0.54f;
     private float xRotation = 0f;
     
     private RaycastHit hit;
@@ -46,8 +47,8 @@ public class MouseMovement : MonoBehaviour
     {
         if (context.performed)
         {
-            Debug.DrawRay(transform.position, playerCamera.forward, Color.green);
-            if (Physics.Raycast(transform.position, playerCamera.forward, out hit, 3.0f))
+            Debug.DrawRay(transform.position, Camera.main.transform.forward + Vector3.up*camHeightOffset, Color.red);
+            if (Physics.Raycast(transform.position, Camera.main.transform.forward + Vector3.up*camHeightOffset, out hit, 3.0f))
             {
                 print(hit.collider.name);
                 if (hit.transform.tag == "Interactable") {

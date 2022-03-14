@@ -640,7 +640,7 @@ GameObject:
   - component: {fileID: 55184038}
   m_Layer: 0
   m_Name: Feuille.002 (4)
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -860,7 +860,7 @@ GameObject:
   - component: {fileID: 77679162}
   m_Layer: 0
   m_Name: Feuille.002 (9)
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -2298,7 +2298,7 @@ MeshCollider:
   m_GameObject: {fileID: 195136332}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -2661,7 +2661,7 @@ MeshCollider:
   m_GameObject: {fileID: 223679536}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -4336,7 +4336,7 @@ MeshCollider:
   m_GameObject: {fileID: 337211471}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -5124,7 +5124,7 @@ GameObject:
   - component: {fileID: 388956961}
   m_Layer: 0
   m_Name: Feuille.002 (10)
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -5236,7 +5236,7 @@ GameObject:
   - component: {fileID: 390833457}
   m_Layer: 0
   m_Name: Feuille.002 (7)
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -5639,7 +5639,7 @@ MeshCollider:
   m_GameObject: {fileID: 446024712}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -7406,7 +7406,7 @@ MeshCollider:
   m_GameObject: {fileID: 632697422}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -10594,7 +10594,7 @@ Transform:
   m_GameObject: {fileID: 734940472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.009999752, y: 0.3680877, z: -0.1400013}
-  m_LocalScale: {x: 1, y: 0.4280089, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1783438888}
   m_RootOrder: 0
@@ -12938,7 +12938,7 @@ GameObject:
   - component: {fileID: 899108670}
   m_Layer: 0
   m_Name: Feuille.002 (1)
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -15428,7 +15428,6 @@ GameObject:
   - component: {fileID: 1082436779}
   - component: {fileID: 1082436780}
   - component: {fileID: 1082436781}
-  - component: {fileID: 1082436782}
   m_Layer: 0
   m_Name: Feuille8
   m_TagString: Interactable
@@ -15450,7 +15449,7 @@ Transform:
   - {fileID: 1446798013}
   - {fileID: 2134981469}
   m_Father: {fileID: 657986584}
-  m_RootOrder: 169
+  m_RootOrder: 171
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1082436780
 MeshCollider:
@@ -15461,9 +15460,9 @@ MeshCollider:
   m_GameObject: {fileID: 1082436778}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!65 &1082436781
@@ -15475,26 +15474,10 @@ BoxCollider:
   m_GameObject: {fileID: 1082436778}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.026703902, y: 0.032308023, z: 0.692593}
   m_Center: {x: 1.6461006, y: 1.0643549, z: -0.49524623}
---- !u!54 &1082436782
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1082436778}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1090943648 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2339389280942572521, guid: 4c979201f8134c14598f4fb72d201bdd,
@@ -15873,7 +15856,7 @@ MeshCollider:
   m_GameObject: {fileID: 1110362135}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -15945,7 +15928,7 @@ GameObject:
   - component: {fileID: 1122135602}
   m_Layer: 0
   m_Name: Feuille.002 (5)
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -16777,7 +16760,7 @@ GameObject:
   - component: {fileID: 1214898196}
   m_Layer: 0
   m_Name: Feuille.002 (3)
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -19238,7 +19221,7 @@ MeshCollider:
   m_GameObject: {fileID: 1294704906}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -20329,7 +20312,7 @@ Transform:
   - {fileID: 388956958}
   - {fileID: 337211472}
   m_Father: {fileID: 657986584}
-  m_RootOrder: 171
+  m_RootOrder: 170
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1398791500 stripped
 GameObject:
@@ -21098,7 +21081,7 @@ GameObject:
   - component: {fileID: 1446798016}
   m_Layer: 0
   m_Name: Feuille.002 (8)
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -21190,7 +21173,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
@@ -22358,7 +22341,7 @@ GameObject:
   - component: {fileID: 1536585976}
   m_Layer: 0
   m_Name: Feuille.002 (6)
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -23049,7 +23032,7 @@ MeshCollider:
   m_GameObject: {fileID: 1600592542}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -24456,7 +24439,7 @@ MeshCollider:
   m_GameObject: {fileID: 1766194474}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -24677,7 +24660,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783438884}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.725, y: 7.4566, z: 5.6419}
+  m_LocalPosition: {x: 12.06, y: 5.46, z: 5.04}
   m_LocalScale: {x: 0.54087, y: 1.2636887, z: 0.54087}
   m_Children:
   - {fileID: 734940475}
@@ -25185,7 +25168,7 @@ GameObject:
   - component: {fileID: 1823342772}
   m_Layer: 0
   m_Name: Feuille.002 (2)
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -28112,7 +28095,7 @@ Transform:
   - {fileID: 77679159}
   - {fileID: 446024713}
   m_Father: {fileID: 657986584}
-  m_RootOrder: 170
+  m_RootOrder: 169
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2099860067 stripped
 GameObject:
@@ -28492,7 +28475,7 @@ MeshCollider:
   m_GameObject: {fileID: 2134981468}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30

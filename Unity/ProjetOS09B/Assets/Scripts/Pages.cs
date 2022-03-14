@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Doors : MonoBehaviour
+public class Pages : MonoBehaviour
 {
-    private bool isOpen = false;
+    private bool isReal;
 
     // Start is called before the first frame update
     void Start()
@@ -19,16 +19,11 @@ public class Doors : MonoBehaviour
     }
 
     public void ChangeState() {
-        if (isOpen) {
-            //play
-            isOpen = false;
-            print("fermer");
+        if (isReal) {
+            //compteur+1
+            
         }
-        else {
-            //play
-            isOpen = true;
-            print("ouvrir");
-        }
+        Destroy(transform.parent.gameObject);
             
     }
 }
