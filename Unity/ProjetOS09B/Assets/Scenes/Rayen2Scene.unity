@@ -28413,6 +28413,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prof
       objectReference: {fileID: 0}
+    - target: {fileID: 5168617961127117580, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5168617961127117583, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
         type: 3}
       propertyPath: player

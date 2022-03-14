@@ -67,14 +67,11 @@ public class LineOfSight : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision col)
+    void OnTriggerEnter(Collider other)
     {
-
-        //if(col.gameObject.name == "Player")
-        //{
-            ani.SetBool("Run", false);
-            ani.SetBool("Catch", true);
-        // }
-        Debug.Log("Collision Detected");
+        // Lose HP
+        // Play sound
+        // Do whatever you like
+        Debug.Log("CA MARCHE");
     }
 }
