@@ -10,19 +10,22 @@ public class LineOfSight : MonoBehaviour
     private RaycastHit hit;
     private Vector3 rayDirection;
     private PlayerMovement playerMovement;
+    Animator ani;
 
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         playerMovement = player.GetComponent<PlayerMovement>();
+        //Animation Controller of the current object
+        ani = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         rayDirection = player.transform.position - transform.position;
-        if (Physics.Raycast(transform.position, rayDirection, out hit, 10.0f))
+        if (Physics.Raycast(transform.position, rayDirection, out hit, 3.0f))
         {
             if (hit.transform == player.transform && Vector3.Angle(rayDirection, transform.forward) < 60) {
                 print("Player seen");
@@ -33,13 +36,45 @@ public class LineOfSight : MonoBehaviour
             }
             else if (playerMovement.isMoving && rayDirection.magnitude < 3.0f) {
                 print("Player heard");
-                agent.SetDestination(player.transform.position);
+                //agent.SetDestination(player.transform.position);
+                chasing = true;
             }
-        }    
+        }
+        else
+        {
+            chasing = false;
+        }
 
-        if (chasing)
+        if (Physics.Raycast(transform.position, rayDirection, out hit, 2.0f))
+        {
+            if (hit.transform == player.transform && Vector3.Angle(rayDirection, transform.forward) < 60)
+            {
+                print("Attack Player");
+                ani.SetBool("Run", false);
+                ani.SetTrigger("TrCatch");
+            }
+        }
+
+            if (chasing)
         {
             agent.SetDestination(player.transform.position);
+            ani.SetBool("Run", true);
         }
+        else
+        {
+            agent.SetDestination(agent.transform.position);
+            ani.SetBool("Run", false);
+        }
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
+
+        //if(col.gameObject.name == "Player")
+        //{
+            ani.SetBool("Run", false);
+            ani.SetBool("Catch", true);
+        // }
+        Debug.Log("Collision Detected");
     }
 }
