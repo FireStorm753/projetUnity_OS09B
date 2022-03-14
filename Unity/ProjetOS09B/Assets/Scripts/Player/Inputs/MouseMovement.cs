@@ -46,8 +46,10 @@ public class MouseMovement : MonoBehaviour
     {
         if (context.performed)
         {
-            if (Physics.Raycast(transform.position, transform.forward, out hit, 3.0f))
+            Debug.DrawRay(transform.position, playerCamera.forward, Color.green);
+            if (Physics.Raycast(transform.position, playerCamera.forward, out hit, 3.0f))
             {
+                print(hit.collider.name);
                 if (hit.transform.tag == "Interactable") {
                     print("Interacted with");   
                     
