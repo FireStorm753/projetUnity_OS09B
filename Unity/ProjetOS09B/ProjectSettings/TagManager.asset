@@ -9,6 +9,7 @@ TagManager:
   - Fire
   - Teleporter1
   - Teleporter2
+  - Student
   layers:
   - Default
   - TransparentFX
