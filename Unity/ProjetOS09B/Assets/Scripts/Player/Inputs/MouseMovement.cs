@@ -50,10 +50,7 @@ public class MouseMovement : MonoBehaviour
             Debug.DrawRay(transform.position, Camera.main.transform.forward + Vector3.up*camHeightOffset, Color.red);
             if (Physics.Raycast(transform.position, Camera.main.transform.forward + Vector3.up*camHeightOffset, out hit, 4.0f))
             {
-                print(hit.collider.name);
                 if (hit.transform.tag == "Interactable") {
-                    print("Interacted with");   
-                    
                     hit.transform.gameObject.SendMessage("ChangeState");
                 }
             }
