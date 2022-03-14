@@ -22,14 +22,6 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Fire",
-                    "type": "PassThrough",
-                    "id": "af3ce49d-9c3f-4fe0-ae38-b82c5d17076d",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Interact",
                     "type": "Button",
                     "id": "b3358a51-f572-4597-924e-c959cca16776",
@@ -151,19 +143,19 @@
                 },
                 {
                     "name": "",
-                    "id": "05f6913d-c316-48b2-a6bb-e225f14c7960",
-                    "path": "<Mouse>/leftButton",
+                    "id": "87abcf10-aae5-4214-bc36-a1041c86cc9b",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Fire",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "87abcf10-aae5-4214-bc36-a1041c86cc9b",
-                    "path": "<Keyboard>/e",
+                    "id": "71219ac7-93a2-425f-864b-d92f07cd155b",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
