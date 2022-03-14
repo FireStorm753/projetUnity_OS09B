@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] LayerMask groundMask;
     bool isGrounded;
     public bool isMoving;
+    public bool isCrouching;
 
     private void Update ()
     {
