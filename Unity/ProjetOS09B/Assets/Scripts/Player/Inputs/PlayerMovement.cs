@@ -36,8 +36,8 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = _horizontalInput;
     }
+}
 
-    
     // private CharacterController controller;
 
     // public bool isMoving = false;
@@ -63,4 +63,3 @@ public class PlayerMovement : MonoBehaviour
     //         isCrouching = false;
     //     }
     // }
-}

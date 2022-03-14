@@ -31,8 +31,6 @@ public class PlayerInput : MonoBehaviour
     {
         movement.ReceiveInput(horizontalInput);
         mouse.ReceiveInput(mouseInput);
-        
-        
     }
 
     private void OnEnable ()
