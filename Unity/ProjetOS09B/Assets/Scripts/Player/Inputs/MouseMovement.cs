@@ -42,16 +42,6 @@ public class MouseMovement : MonoBehaviour
         mouseY = mouseInput.y * sensitivityY;
     }
 
-    // public void OnLook (InputAction.CallbackContext context)
-    // {
-    //     if (context.performed)
-    //     {
-    //         mouseMovement = context.ReadValue<Vector2>();
-    //         mouseX = mouseMovement.x * sensitivityX;
-    //         mouseY = mouseMovement.y * sensitivityY;
-    //     }
-    // }
-
     public void OnInteract (InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -62,7 +52,6 @@ public class MouseMovement : MonoBehaviour
                     print("Interacted with");   
                     
                     hit.transform.gameObject.SendMessage("ChangeState");
-                    //hit.transform.GetComponent<Doors>().ChangeState();    
                 }
             }
         }

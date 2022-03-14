@@ -320,6 +320,7 @@ GameObject:
   - component: {fileID: 255816820}
   - component: {fileID: 255816819}
   - component: {fileID: 255816818}
+  - component: {fileID: 255816822}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Interactable
@@ -401,6 +402,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &255816822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255816817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff4ef403b005144cb81a7ab8ca48e19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &734940472
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,8 +972,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitivityX: 30
   sensitivityY: 0.2
-  mouseX: 0
-  mouseY: 0
   playerCamera: {fileID: 734940475}
   xClamp: 85
 --- !u!114 &1783438893
@@ -1003,9 +1014,9 @@ MonoBehaviour:
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 558fb97eeaf27dd448a6ba0dc43f7bf5, type: 3}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1783438892}
+        m_MethodName: OnInteract
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

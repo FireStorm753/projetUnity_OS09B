@@ -5,30 +5,27 @@ using UnityEngine.InputSystem;
 
 public class Interact : MonoBehaviour
 {
-    private bool interact;
+    [SerializeField] private bool interact;
     private RaycastHit hit;
 
     public void OnInteract (InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.started)
             interact = true;
-        // else if (context.performed)
-        //     interact = false;
+        else if (context.performed)
+            interact = false;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        print("a");
     }
 
     // Update is called once per frame
     void Update()
     {
-        print("a");
         if (Physics.Raycast(transform.position, transform.forward, out hit, 3.0f))
         {
-            
             if (hit.transform.tag == "Interactable" && interact == true) {
                 print("Interacted with");   
                    
