@@ -4057,6 +4057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b35bde79334c0574b9da16a496382303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!135 &310519532
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -17149,27 +17150,27 @@ PrefabInstance:
     - target: {fileID: 2124590844357194339, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.21
+      value: -20.697
       objectReference: {fileID: 0}
     - target: {fileID: 2124590844357194339, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.11
+      value: 24.75
       objectReference: {fileID: 0}
     - target: {fileID: 2124590844357194339, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 30.73
+      value: 20.653
       objectReference: {fileID: 0}
     - target: {fileID: 2124590844357194339, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2124590844357194339, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9998425
+      value: 0.45709798
       objectReference: {fileID: 0}
     - target: {fileID: 2124590844357194339, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
         type: 3}
@@ -17179,7 +17180,7 @@ PrefabInstance:
     - target: {fileID: 2124590844357194339, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.01774592
+      value: -0.8894164
       objectReference: {fileID: 0}
     - target: {fileID: 2124590844357194339, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
         type: 3}
@@ -17194,7 +17195,7 @@ PrefabInstance:
     - target: {fileID: 2124590844357194339, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 177.966
+      value: 305.6
       objectReference: {fileID: 0}
     - target: {fileID: 2124590844357194339, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
         type: 3}
@@ -17239,7 +17240,7 @@ PrefabInstance:
     - target: {fileID: 2124590844357194342, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2124590844357194343, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
         type: 3}
