@@ -12,6 +12,8 @@ public class Teacher : MonoBehaviour
     private PlayerMovement playerMovement;
     Animator ani;
 
+    public int numberOfHit;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +54,9 @@ public class Teacher : MonoBehaviour
                 print("Attack Player");
                 ani.SetBool("Run", false);
                 ani.SetTrigger("TrCatch");
+                numberOfHit++;
+                if (numberOfHit >= 2)
+                    Debug.Log("You've lost");
             }
         }
 

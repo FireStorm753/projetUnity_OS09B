@@ -4319,7 +4319,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.50000006
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -2}
 --- !u!1 &320285114 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6310786787318757106, guid: fbef33fccb060b846a660a493a8a6550,

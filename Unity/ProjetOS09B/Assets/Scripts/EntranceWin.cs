@@ -27,7 +27,7 @@ public class EntranceWin : MonoBehaviour
                 Debug.Log("You WON");
         }
         else
-            Debug.Log("FIND MORE OF THEM " + PlayerMovement.counter + " ISN't ENOUGH");
+            Debug.Log(other.gameObject.name+ "  FIND MORE OF THEM " + PlayerMovement.counter + " ISN't ENOUGH");
 
     }
 }
