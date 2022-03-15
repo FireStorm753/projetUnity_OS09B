@@ -92,7 +92,7 @@ public class PatrollingIA : MonoBehaviour
         if (other.gameObject.name == "Player")
         {
             Debug.Log("Collision with player");
-            //chasing = false;
+            chasing = false;
             ani.SetBool("Run", false);
             ani.SetTrigger("TrCatch");
             numberOfHit++;
