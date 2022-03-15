@@ -72,6 +72,13 @@ public class Teacher : MonoBehaviour
         // Lose HP
         // Play sound
         // Do whatever you like
-        Debug.Log("CA MARCHE");
+        if (other.gameObject.name == "Player")
+        {
+            // It is object B
+            Debug.Log("CA MARCHE");
+            chasing = false;
+            ani.SetTrigger("TrCatch");
+        }
+        
     }
 }
