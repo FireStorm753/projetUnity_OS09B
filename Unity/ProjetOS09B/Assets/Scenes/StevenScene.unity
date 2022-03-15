@@ -3387,6 +3387,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &158305696 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2907767926271290176, guid: fea79a4e161f50f4d9497036183a44ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 6592032438609102059}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &158305697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158305696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74bb94eec08e1214eba4c6000f43193a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1375390675}
+  Student: {fileID: 158305696}
+  Teleporter1To: {fileID: 363938492}
+  Teleporter2To: {fileID: 371959267}
 --- !u!1 &163340395 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8873907915493312394, guid: 4c979201f8134c14598f4fb72d201bdd,
@@ -6142,7 +6164,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 363938492}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.133, y: 15.920006, z: 32.985}
+  m_LocalPosition: {x: 10.151, y: 10.047, z: 32.985}
   m_LocalScale: {x: 1.7965187, y: 0.024363417, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6307,7 +6329,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 371959267}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.195, y: 15.809006, z: 9.12}
+  m_LocalPosition: {x: 17.195, y: 9.966, z: 9.12}
   m_LocalScale: {x: 1.7965187, y: 0.024363417, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6580,7 +6602,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 389828096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.718, y: 15.928005, z: 34.797}
+  m_LocalPosition: {x: 11.69, y: 10.08, z: 34.797}
   m_LocalScale: {x: 1.7965187, y: 0.024363417, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -20242,6 +20264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1375390675}
+  Student: {fileID: 158305696}
   Teleporter1To: {fileID: 363938492}
   Teleporter2To: {fileID: 371959267}
 --- !u!114 &1375390677
@@ -24946,7 +24969,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743782480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.268, y: 15.797005, z: 11.427}
+  m_LocalPosition: {x: 15.288, y: 9.967, z: 11.412}
   m_LocalScale: {x: 1.7965187, y: 0.024363417, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
