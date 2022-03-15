@@ -65,7 +65,13 @@ public class Teacher : MonoBehaviour
             ani.SetTrigger("TrCatch");
             numberOfHit++;
             if (numberOfHit >= 5)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 SceneManager.LoadScene("GameOver");
+
+            }
+                
         }
     }
 }

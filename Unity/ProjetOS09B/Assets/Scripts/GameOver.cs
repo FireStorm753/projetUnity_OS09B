@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class GameOver : MonoBehaviour
 {
     public static List<int> RealPageList = new List<int>();
-
+    
     public void RestartGame()
     {
         for (int i = 0; i < 3; i++)
