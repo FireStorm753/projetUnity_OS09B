@@ -120,7 +120,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 4852f1b54c799334bb4468bb0bb4418d, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 516275b462b30f640ab39d05ffc710a4, type: 2}
 --- !u!64 &4073967
 MeshCollider:
   m_ObjectHideFlags: 0
