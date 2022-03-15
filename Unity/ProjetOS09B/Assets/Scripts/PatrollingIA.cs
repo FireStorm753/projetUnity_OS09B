@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
 public class PatrollingIA : MonoBehaviour
@@ -54,16 +53,11 @@ public class PatrollingIA : MonoBehaviour
         {
             agent.SetDestination(player.transform.position);
             ani.SetBool("Run", true);
-            ani.SetBool("Walk", false);
-            GetComponent<NavMeshAgent>().speed = 2;
         }
         else
         {
-            ani.SetBool("Run", false);
-            ani.SetBool("Walk", true);
-            GetComponent<NavMeshAgent>().speed = 1;
             Patrolling();
-            
+            ani.SetBool("Run", true);
         }
     }
 
@@ -72,12 +66,12 @@ public class PatrollingIA : MonoBehaviour
         float distance = Vector3.Distance(transform.position, waypoints[wayPointIndex].transform.position);
         if (distance < 1f)
         {
-            if (wayPointIndex + 1 >= waypoints.Length)
+            if (wayPointIndex+1 >= waypoints.Length)
                 wayPointIndex = 0;
             else
                 wayPointIndex++;
         }
-        agent.SetDestination(waypoints[wayPointIndex].transform.position);
+            agent.SetDestination(waypoints[wayPointIndex].transform.position);
 
     }
 
