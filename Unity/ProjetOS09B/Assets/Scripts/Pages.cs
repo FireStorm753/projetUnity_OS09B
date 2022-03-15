@@ -11,7 +11,6 @@ public class Pages : MonoBehaviour
     void Start()
     {
         pageNumber = int.Parse(transform.parent.gameObject.name.Substring(7, 1));
-        print(pageNumber);
     }
 
     // Update is called once per frame
@@ -21,11 +20,9 @@ public class Pages : MonoBehaviour
     }
 
     public void ChangeState() {
-        Debug.Log("Ca marche");
-       
-        foreach(var page in MainMenu.RealPageList)
-            Debug.Log(page);
-        Debug.Log("Current page: "+pageNumber);
+        print(pageNumber);
+        foreach (int x in MainMenu.RealPageList)
+            print(x);
         if (MainMenu.RealPageList.Contains(pageNumber)) { 
             //compteur+1
             print("+1");

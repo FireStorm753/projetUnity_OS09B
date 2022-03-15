@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            int random = (int) UnityEngine.Random.Range(0, 10)+1;
+            int random = (int) UnityEngine.Random.Range(0, 11)+1;
             if (RealPageList.Contains(random))
                 i--;
             else

@@ -42,10 +42,6 @@ public class Teacher : MonoBehaviour
                 chasing = true;
             }
         }
-        else
-        {
-            chasing = false;
-        }
 
         if (Physics.Raycast(transform.position, rayDirection, out hit, 2.0f))
         {
@@ -60,7 +56,7 @@ public class Teacher : MonoBehaviour
             }
         }
 
-            if (chasing)
+        if (chasing)
         {
             agent.SetDestination(player.transform.position);
             ani.SetBool("Run", true);

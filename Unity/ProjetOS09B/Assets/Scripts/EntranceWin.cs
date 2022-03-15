@@ -23,11 +23,10 @@ public class EntranceWin : MonoBehaviour
         // Do whatever you like
         if (other.gameObject.name == "Player")
         {
-            if (PlayerMovement.counter >= 2)
+            if (PlayerMovement.counter == 3)
                 Debug.Log("You WON");
+            else
+                Debug.Log(other.gameObject.name+ "  FIND MORE OF THEM " + PlayerMovement.counter + " ISN't ENOUGH");
         }
-        else
-            Debug.Log(other.gameObject.name+ "  FIND MORE OF THEM " + PlayerMovement.counter + " ISN't ENOUGH");
-
     }
 }
