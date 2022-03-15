@@ -18,7 +18,7 @@ public class EntranceWin : MonoBehaviour
         float distance = Vector3.Distance(transform.position, player.transform.position);
         if(distance < 1f)
         {
-            if (PlayerMovement.counter >= 3)
+            if (PlayerMovement.counter >= 2)
             {
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
