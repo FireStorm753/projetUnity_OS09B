@@ -8,14 +8,12 @@ public class Pages : MonoBehaviour
     private bool isReal;
     private int pageNumber;
 
-    public string text;
     public Text textElement;
 
     // Start is called before the first frame update
     void Start()
     {
         pageNumber = int.Parse(transform.parent.gameObject.name.Substring(7, 1));
-        text = "Pages ramassés : 0/2";
     }
 
     // Update is called once per frame
@@ -25,12 +23,10 @@ public class Pages : MonoBehaviour
     }
 
     public void ChangeState() {
-        print(pageNumber);
-        foreach (int x in MainMenu.RealPageList)
-            print(x);
         if (MainMenu.RealPageList.Contains(pageNumber)) { 
             PlayerMovement.counter++;
-            text = "Pages ramassés : "+PlayerMovement.counter+"/2";
+            print("+1");
+            textElement.text = "Pages ramassés : "+PlayerMovement.counter+"/2";
             
             Teacher.chasing = true;
         }
