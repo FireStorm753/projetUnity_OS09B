@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
 public class Teacher : MonoBehaviour
 {
     public GameObject player;
+    public GameObject[] waypoints;
+    private int wayPointIndex;
     private UnityEngine.AI.NavMeshAgent agent;
     [SerializeField] public static bool chasing;
+    [SerializeField] public static bool punch;
     private RaycastHit hit;
     private Vector3 rayDirection;
     private PlayerMovement playerMovement;
@@ -22,6 +26,7 @@ public class Teacher : MonoBehaviour
         playerMovement = player.GetComponent<PlayerMovement>();
         //Animation Controller of the current object
         ani = GetComponent<Animator>();
+        wayPointIndex = 0;
     }
 
     // Update is called once per frame
@@ -30,14 +35,16 @@ public class Teacher : MonoBehaviour
         rayDirection = player.transform.position - transform.position;
         if (Physics.Raycast(transform.position, rayDirection, out hit, 3.0f))
         {
-            if (hit.transform == player.transform && Vector3.Angle(rayDirection, transform.forward) < 60) {
+            if (hit.transform == player.transform && Vector3.Angle(rayDirection, transform.forward) < 60)
+            {
                 print("Player seen");
                 chasing = true;
             }
             // else if (playerMovement.isMoving && playerMovement.isCrouching && rayDirection.magnitude < 1.0f) {
             //     print("Player crouched heard");
             // }
-            else if (playerMovement.isMoving && rayDirection.magnitude < 3.0f) {
+            else if (playerMovement.isMoving && rayDirection.magnitude < 3.0f)
+            {
                 print("Player heard");
                 //agent.SetDestination(player.transform.position);
                 chasing = true;
@@ -48,12 +55,34 @@ public class Teacher : MonoBehaviour
         {
             agent.SetDestination(player.transform.position);
             ani.SetBool("Run", true);
+            ani.SetBool("Walk", false);
+            GetComponent<NavMeshAgent>().speed = 2;
+            punch = false;
         }
         else
         {
-            agent.SetDestination(agent.transform.position);
+            punch = false;
             ani.SetBool("Run", false);
+            ani.SetBool("Walk", true);
+            GetComponent<NavMeshAgent>().speed = 1;
+            Patrolling();
+            
+
         }
+    }
+
+    void Patrolling()
+    {
+        float distance = Vector3.Distance(transform.position, waypoints[wayPointIndex].transform.position);
+        if (distance < 1f)
+        {
+            if (wayPointIndex + 1 >= waypoints.Length)
+                wayPointIndex = 0;
+            else
+                wayPointIndex++;
+        }
+        agent.SetDestination(waypoints[wayPointIndex].transform.position);
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -61,6 +90,7 @@ public class Teacher : MonoBehaviour
         if (other.gameObject.name == "Player")
         {
             chasing = false;
+            punch = true;
             ani.SetBool("Run", false);
             ani.SetTrigger("TrCatch");
             numberOfHit++;
@@ -71,7 +101,7 @@ public class Teacher : MonoBehaviour
                 SceneManager.LoadScene("GameOver");
 
             }
-                
+
         }
     }
 }
