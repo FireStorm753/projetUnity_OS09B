@@ -3406,9 +3406,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1375390675}
-  Student: {fileID: 158305696}
+  student: {fileID: 158305699}
   Teleporter1To: {fileID: 363938492}
   Teleporter2To: {fileID: 371959267}
+--- !u!195 &158305699 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 6592032438701257293, guid: fea79a4e161f50f4d9497036183a44ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 6592032438609102059}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &163340395 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8873907915493312394, guid: 4c979201f8134c14598f4fb72d201bdd,
@@ -20264,7 +20270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1375390675}
-  Student: {fileID: 158305696}
+  student: {fileID: 158305699}
   Teleporter1To: {fileID: 363938492}
   Teleporter2To: {fileID: 371959267}
 --- !u!114 &1375390677
