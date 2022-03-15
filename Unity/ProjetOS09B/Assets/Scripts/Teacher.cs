@@ -33,26 +33,13 @@ public class Teacher : MonoBehaviour
                 print("Player seen");
                 chasing = true;
             }
-            else if (playerMovement.isMoving && playerMovement.isCrouching && rayDirection.magnitude < 1.0f) {
-                print("Player crouched heard");
-            }
+            // else if (playerMovement.isMoving && playerMovement.isCrouching && rayDirection.magnitude < 1.0f) {
+            //     print("Player crouched heard");
+            // }
             else if (playerMovement.isMoving && rayDirection.magnitude < 3.0f) {
                 print("Player heard");
                 //agent.SetDestination(player.transform.position);
                 chasing = true;
-            }
-        }
-
-        if (Physics.Raycast(transform.position, rayDirection, out hit, 2.0f))
-        {
-            if (hit.transform == player.transform && Vector3.Angle(rayDirection, transform.forward) < 60)
-            {
-                print("Attack Player");
-                ani.SetBool("Run", false);
-                ani.SetTrigger("TrCatch");
-                numberOfHit++;
-                if (numberOfHit >= 2)
-                    Debug.Log("You've lost");
             }
         }
 
@@ -70,16 +57,14 @@ public class Teacher : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // Lose HP
-        // Play sound
-        // Do whatever you like
         if (other.gameObject.name == "Player")
         {
-            // It is object B
-            Debug.Log("CA MARCHE");
             chasing = false;
+            ani.SetBool("Run", false);
             ani.SetTrigger("TrCatch");
+            numberOfHit++;
+            if (numberOfHit >= 2)
+                Debug.Log("You've lost");
         }
-        
     }
 }
