@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isMoving;
     public bool isCrouching;
     public static int counter = 0;
+    public static bool cheatStatus = false;
 
     private void Update ()
     {
@@ -38,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput = _horizontalInput;
     }
+
+ 
 }
 
     // private CharacterController controller;
