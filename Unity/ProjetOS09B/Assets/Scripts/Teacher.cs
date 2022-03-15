@@ -64,7 +64,7 @@ public class Teacher : MonoBehaviour
             ani.SetBool("Run", false);
             ani.SetTrigger("TrCatch");
             numberOfHit++;
-            if (numberOfHit >= 2)
+            if (numberOfHit >= 5)
                 SceneManager.LoadScene("GameOver");
         }
     }
