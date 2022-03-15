@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     bool isGrounded;
     public bool isMoving;
     public bool isCrouching;
+    public static int counter = 0;
 
     private void Update ()
     {
