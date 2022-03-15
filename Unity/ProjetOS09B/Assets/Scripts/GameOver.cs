@@ -17,6 +17,7 @@ public class GameOver : MonoBehaviour
             else
                 RealPageList.Add(random);
         }
+        PlayerMovement.counter = 0;
         SceneManager.LoadScene("MainScene");
     }
 
