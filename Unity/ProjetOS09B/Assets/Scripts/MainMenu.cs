@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
             else
                 RealPageList.Add(random);
         }
-        SceneManager.LoadScene("LucScene");
+        SceneManager.LoadScene("MainScene");
         
     }
 

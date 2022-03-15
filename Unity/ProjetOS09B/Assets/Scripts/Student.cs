@@ -30,13 +30,13 @@ public class Student : MonoBehaviour
         bool isMoving = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>().isMoving;
         if (isMoving == true) 
         {
-            Debug.Log("Bouge");
+            //Debug.Log("Bouge");
             ani.SetBool("Run", true);
             student.SetDestination(player.transform.position);
         }
         else
         {
-            Debug.Log("Bouge pas");
+            //Debug.Log("Bouge pas");
             ani.SetBool("Run", false);
             student.SetDestination(student.transform.position);
         }
