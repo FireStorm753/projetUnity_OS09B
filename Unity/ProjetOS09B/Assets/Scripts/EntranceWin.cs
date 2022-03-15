@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EntranceWin : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class EntranceWin : MonoBehaviour
         if(distance < 1f)
         {
             if (PlayerMovement.counter >= 3)
-                Debug.Log("WIN WIN WIN");
+                SceneManager.LoadScene("Win");
             else
                 Debug.Log("FIND MORE OF THEM " + PlayerMovement.counter + " ISN'T ENOUGH");
         }
