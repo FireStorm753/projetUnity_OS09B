@@ -11,7 +11,7 @@ public class Teacher : MonoBehaviour
     private int wayPointIndex;
     private UnityEngine.AI.NavMeshAgent agent;
     [SerializeField] public static bool chasing;
-    [SerializeField] public static bool punch;
+
     private RaycastHit hit;
     private Vector3 rayDirection;
     private PlayerMovement playerMovement;
@@ -57,16 +57,13 @@ public class Teacher : MonoBehaviour
             ani.SetBool("Run", true);
             ani.SetBool("Walk", false);
             GetComponent<NavMeshAgent>().speed = 2;
-            punch = false;
         }
         else
         {
-            punch = false;
             ani.SetBool("Run", false);
             ani.SetBool("Walk", true);
             GetComponent<NavMeshAgent>().speed = 1;
             Patrolling();
-            
 
         }
     }
@@ -90,7 +87,6 @@ public class Teacher : MonoBehaviour
         if (other.gameObject.name == "Player")
         {
             chasing = false;
-            punch = true;
             ani.SetBool("Run", false);
             ani.SetTrigger("TrCatch");
             numberOfHit++;
