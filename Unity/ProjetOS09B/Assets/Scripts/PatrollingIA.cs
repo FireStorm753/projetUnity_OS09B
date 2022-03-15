@@ -1,46 +1,96 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PatrollingIA : MonoBehaviour
 {
+    public GameObject player;
+    public GameObject[] waypoints;
+    private int wayPointIndex;
     private UnityEngine.AI.NavMeshAgent agent;
-    public Transform[] waypoints;
-    private int waypointIndex;
-    Vector3 target;
-
+    [SerializeField] public static bool chasing;
+    private RaycastHit hit;
+    private Vector3 rayDirection;
+    private PlayerMovement playerMovement;
     Animator ani;
+
+    public int numberOfHit;
+
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        waypointIndex = 0;
+        playerMovement = player.GetComponent<PlayerMovement>();
+        //Animation Controller of the current object
         ani = GetComponent<Animator>();
+        wayPointIndex = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(transform.position, target) < 1)
+        rayDirection = player.transform.position - transform.position;
+        if (Physics.Raycast(transform.position, rayDirection, out hit, 3.0f))
         {
-            IterateWaypointIndex();
-            UpdateDestination();
+            if (hit.transform == player.transform && Vector3.Angle(rayDirection, transform.forward) < 60)
+            {
+                print("Player seen");
+                chasing = true;
+            }
+            // else if (playerMovement.isMoving && playerMovement.isCrouching && rayDirection.magnitude < 1.0f) {
+            //     print("Player crouched heard");
+            // }
+            else if (playerMovement.isMoving && rayDirection.magnitude < 3.0f)
+            {
+                print("Player heard");
+                //agent.SetDestination(player.transform.position);
+                chasing = true;
+            }
+        }
+
+        if (chasing)
+        {
+            agent.SetDestination(player.transform.position);
+            ani.SetBool("Run", true);
+        }
+        else
+        {
+            Patrolling();
+            ani.SetBool("Run", true);
         }
     }
 
-    void IterateWaypointIndex()
+    void Patrolling()
     {
-        waypointIndex++;
-        if (waypointIndex >= waypoints.Length)
+        float distance = Vector3.Distance(transform.position, waypoints[wayPointIndex].transform.position);
+        if (distance < 1f)
         {
-            waypointIndex = 0;
+            if (wayPointIndex+1 >= waypoints.Length)
+                wayPointIndex = 0;
+            else
+                wayPointIndex++;
         }
+            agent.SetDestination(waypoints[wayPointIndex].transform.position);
+
     }
 
-    void UpdateDestination()
+    void OnTriggerEnter(Collider other)
     {
-        
-        target = waypoints[waypointIndex].position;
-        agent.SetDestination(target);
+        if (other.gameObject.name == "Player")
+        {
+            chasing = false;
+            ani.SetBool("Run", false);
+            ani.SetTrigger("TrCatch");
+            numberOfHit++;
+            if (numberOfHit >= 5)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                SceneManager.LoadScene("GameOver");
+
+            }
+
+        }
     }
 }
