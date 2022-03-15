@@ -65,7 +65,7 @@ public class Teacher : MonoBehaviour
             ani.SetTrigger("TrCatch");
             numberOfHit++;
             if (numberOfHit >= 2)
-                SceneManager.LoadScene("Menu");
+                SceneManager.LoadScene("GameOver");
         }
     }
 }
