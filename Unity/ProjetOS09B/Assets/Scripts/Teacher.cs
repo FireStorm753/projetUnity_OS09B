@@ -64,7 +64,7 @@ public class Teacher : MonoBehaviour
             ani.SetTrigger("TrCatch");
             numberOfHit++;
             if (numberOfHit >= 2)
-                Debug.Log("You've lost");
+                SceneManager.LoadScene("Menu");
         }
     }
 }
