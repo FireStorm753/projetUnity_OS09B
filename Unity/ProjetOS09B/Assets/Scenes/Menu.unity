@@ -3877,10 +3877,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Rayen doit r\xE9ussir \xE0 r\xE9cup\xE9rer les copies du dernier DS dans
-    la classe du professeur Colin pour pouvoir sortir de l'universit\xE9.\n\nAider
-    le \xE0 s'emparer de ces copies pour partir sans probl\xE8mes.\n\nA vous de jouer
-    !"
+  m_Text: "Rayen et son ami doivent r\xE9ussir \xE0 r\xE9cup\xE9rer les copies de
+    leur dernier DS dans la classe du professeur Warren pour pouvoir sortir de l'universit\xE9.\n\nAider
+    les \xE0 s'emparer de leurs copies pour partir sans probl\xE8mes.\n\nA vous de
+    jouer !"
 --- !u!222 &1562802724
 CanvasRenderer:
   m_ObjectHideFlags: 0
