@@ -19,7 +19,12 @@ public class EntranceWin : MonoBehaviour
         if(distance < 1f)
         {
             if (PlayerMovement.counter >= 3)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 SceneManager.LoadScene("Win");
+            }
+                
             else
                 Debug.Log("FIND MORE OF THEM " + PlayerMovement.counter + " ISN'T ENOUGH");
         }
