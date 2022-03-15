@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -708,7 +708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff4ef403b005144cb81a7ab8ca48e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
   textElement: {fileID: 1757816281}
 --- !u!64 &55784605
 MeshCollider:
@@ -1024,7 +1023,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff4ef403b005144cb81a7ab8ca48e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
   textElement: {fileID: 1757816281}
 --- !u!1 &80007821 stripped
 GameObject:
@@ -1437,14 +1435,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2124590844357194342, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
         type: 3}
+      propertyPath: waypoints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2124590844357194342, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
+        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1783438884}
     - target: {fileID: 2124590844357194342, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2124590844357194342, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
+        type: 3}
+      propertyPath: waypoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 2141421232}
+    - target: {fileID: 2124590844357194342, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
+        type: 3}
+      propertyPath: waypoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 2091586794}
+    - target: {fileID: 2124590844357194342, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
+        type: 3}
+      propertyPath: waypoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 1980257040}
     - target: {fileID: 2124590844357194343, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
         type: 3}
       propertyPath: m_Speed
@@ -3001,7 +3019,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225828153}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c4300f691b75fd479a87a71f0c7f45b, type: 3}
   m_Name: 
@@ -5621,7 +5639,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff4ef403b005144cb81a7ab8ca48e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
   textElement: {fileID: 1757816281}
 --- !u!1 &390833453
 GameObject:
@@ -5748,7 +5765,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff4ef403b005144cb81a7ab8ca48e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
   textElement: {fileID: 1757816281}
 --- !u!64 &394908991
 MeshCollider:
@@ -11455,7 +11471,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff4ef403b005144cb81a7ab8ca48e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
   textElement: {fileID: 1757816281}
 --- !u!1 &899623433 stripped
 GameObject:
@@ -14082,7 +14097,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff4ef403b005144cb81a7ab8ca48e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
   textElement: {fileID: 1757816281}
 --- !u!64 &1132248281
 MeshCollider:
@@ -14845,7 +14859,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff4ef403b005144cb81a7ab8ca48e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
   textElement: {fileID: 1757816281}
 --- !u!64 &1220452737
 MeshCollider:
@@ -17837,6 +17850,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2124590844357194342, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
         type: 3}
+      propertyPath: waypoints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2124590844357194342, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
+        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1783438884}
@@ -17845,6 +17863,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2124590844357194342, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
+        type: 3}
+      propertyPath: waypoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 1661363661}
+    - target: {fileID: 2124590844357194342, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
+        type: 3}
+      propertyPath: waypoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 1229048058}
+    - target: {fileID: 2124590844357194342, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
+        type: 3}
+      propertyPath: waypoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 559922163}
     - target: {fileID: 2124590844357194343, guid: aebf1a9d53b7f274493bc7ac1a05c19a,
         type: 3}
       propertyPath: m_Speed
@@ -19377,7 +19410,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff4ef403b005144cb81a7ab8ca48e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
   textElement: {fileID: 1757816281}
 --- !u!64 &1446838077
 MeshCollider:
@@ -20538,7 +20570,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff4ef403b005144cb81a7ab8ca48e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
   textElement: {fileID: 1757816281}
 --- !u!1 &1537141507 stripped
 GameObject:
@@ -23514,7 +23545,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff4ef403b005144cb81a7ab8ca48e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
   textElement: {fileID: 1757816281}
 --- !u!64 &1829001912
 MeshCollider:
@@ -36731,7 +36761,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ff4ef403b005144cb81a7ab8ca48e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
   textElement: {fileID: 1757816281}
 --- !u!1 &3028595530822677186
 GameObject:

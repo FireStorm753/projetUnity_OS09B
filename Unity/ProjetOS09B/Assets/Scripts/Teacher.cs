@@ -50,8 +50,13 @@ public class Teacher : MonoBehaviour
                 chasing = true;
             }
         }
+        
 
-        if (chasing)
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+        if (distance > 7f)
+            chasing = false;    
+
+            if (chasing)
         {
             agent.SetDestination(player.transform.position);
             ani.SetBool("Run", true);
@@ -86,7 +91,8 @@ public class Teacher : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
-            chasing = false;
+            Debug.Log("Collision with player");
+            //chasing = false;
             ani.SetBool("Run", false);
             ani.SetTrigger("TrCatch");
             numberOfHit++;
