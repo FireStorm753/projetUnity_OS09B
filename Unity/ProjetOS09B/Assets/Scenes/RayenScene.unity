@@ -1446,7 +1446,8 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 2.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2124590844357194342, guid: aebf1a9d53b7f274493bc7ac1a05c19a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: aebf1a9d53b7f274493bc7ac1a05c19a, type: 3}
 --- !u!64 &104120004
 MeshCollider:
@@ -2793,15 +2794,27 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225828153}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c4300f691b75fd479a87a71f0c7f45b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  player: {fileID: 1783438884}
+  numberOfHit: 3
+--- !u!114 &225828161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225828153}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c75aa9427ee6f44fa75d3ced6fc5ded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1783438884}
+  numberOfHit: 2
 --- !u!64 &228526495
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2886,10 +2899,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c4300f691b75fd479a87a71f0c7f45b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  player: {fileID: 0}
+  numberOfHit: 0
 --- !u!64 &231771407
 MeshCollider:
   m_ObjectHideFlags: 0
